@@ -16,8 +16,6 @@
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.1</spring-cloud.version>
-        <bootstrap.version>4.0.0-2</bootstrap.version>
-        <webjars-locator.version>0.30</webjars-locator.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,7 +35,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -64,19 +61,21 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>${bootstrap.version}</version>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock</artifactId>
+            <scope>test</scope>
+            <version>2.26.3</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>webjars-locator</artifactId>
-            <version>${webjars-locator.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons</artifactId>
-            <version>2.3.1.RELEASE</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
     <dependencyManagement>
